@@ -1,7 +1,9 @@
 'use strict';
 
-import RegistrationController from './registration-controller';
-import template from './registration.html';
+import controller from './registration-controller';
+import templateUrl from './registration.html';
+import stepOneUrl from './step-one.html';
+import registrationConfirmationUrl from './registration-confirmation.html';
 
 function routeConfig($stateProvider) {
   'ngInject';
@@ -9,10 +11,18 @@ function routeConfig($stateProvider) {
   $stateProvider
     .state('registration', {
       url: '/registration',
-      templateUrl: template,
-      controller: RegistrationController,
+      templateUrl,
+      controller,
       controllerAs: 'vm'
-    });
+    })
+    .state('registration.one', {
+      url: '/details',
+      templateUrl: stepOneUrl
+    })    
+    .state('registration.confirmation', {
+      url: '/confirmation',
+      templateUrl: registrationConfirmationUrl
+    })
 }
 
 export default routeConfig;
