@@ -1,25 +1,41 @@
 <!doctype html>
-<html>
+<html ng-app="es6Sample">
 <head>
     <meta charset="utf-8">
     <title>Angular Webpack ES6 Project</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<style type="text/css">
+    .hidden {display:none;}
+</style>    
     {% for (var css in o.htmlWebpackPlugin.files.css) { %}
     <link href="{%=o.htmlWebpackPlugin.files.css[css] %}" rel="stylesheet">
     {% } %}
-
     {% for (var chunk in o.htmlWebpackPlugin.files.chunks) { %}
-    <script src="{%=o.htmlWebpackPlugin.files.chunks[chunk].entry %}" defer></script>
+    <script src="{%=o.htmlWebpackPlugin.files.chunks[chunk].entry %}"></script>
     {% } %}
+<script type="text/javascript">
+    //$('html').addClass('hidden');
+    $(document).ready(function() {
+      $('html').removeClass('hidden');  // EDIT: Can also use $('html').removeClass('hidden'); 
+     });  
+   </script>
+</html>    
 </head>
 <body>
     <!--[if lt IE 10]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
-    <div ui-view></div>
+    <div>
+        <div ui-view></div>    
+    </div>
 
 </body>
+<script type="text/javascript">
+    $('html').addClass('hidden');
+    $(document).ready(function() {
+      $('html').show();  // EDIT: Can also use $('html').removeClass('hidden'); 
+     });  
+   </script>
 </html>

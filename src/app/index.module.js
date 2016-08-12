@@ -1,6 +1,6 @@
 'use strict';
 
-import * as components from './index.components';
+
 import config from './index.config';
 import run from './index.run';
 
@@ -16,7 +16,7 @@ const App = angular.module(
 	"ngMessages", 
 	"ngAria", 
 	"ngResource", 
-	"oc.lazyLoad",
+	//"oc.lazyLoad",
 
     // core
     //require("./core/core.module").name,
@@ -27,8 +27,10 @@ const App = angular.module(
     // routes
     require("./index.routes").name,
 
-    // pages
-    require("./pages/main/main.module").name
+    // // pages
+    // require("./pages/main/main.module").name,
+
+    require("./registration/module").name
 
   ]
 );
