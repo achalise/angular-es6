@@ -1,2 +1,45 @@
-Registration confirmation details to go herer.
-{{vm.firstName}}
+
+    <div class="container pageHeading">
+        <div class="row">
+            <div class="col-sm-push-2 col-md-push-3 col-sm-8 col-md-6 clearfix">
+                <h2>Please Confirm your details</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" ng-cloak>
+        <div class="row">
+            <main class="container col-sm-push-2 col-md-push-3 col-sm-8 col-md-6 printHide">
+                <section class="row">
+                    <div class="col-xs-12 clearfix registWrap border-btm">
+                        <div class="form2Col clearfix">
+                            <fieldset class="form-group pull-left" style="width:48%">
+                                <label for="firstName">First name</label>
+                                <p>{{vm.firstName}}</p>
+                            </fieldset>
+                            <fieldset class="form-group pull-right" style="width:49%">
+                                <label for="lastName">Last name</label>
+                                <p>{{vm.lastName}}</p>
+                            </fieldset>
+                        </div>
+                        <fieldset class="form-group">
+                            <label for="email">Email address</label>
+                            <p>{{vm.email}}</p>
+                        </fieldset>
+                        <div id="landline">
+                            <fieldset class="form-group">
+                                <label for="landlinePhone">Phone number</label>
+                                <p>{{vm.phoneNumber}}</p>
+                            </fieldset>
+                        </div>
+
+                    </div>
+                    <div class="col-xs-12 ctaWrap">
+                        <button ng-click="vm.onSave()" type="button" class="btn btn-primary btn-lg pull-right mgLeft10 waves-effect waves-light">Create Account</button>
+                        <button ng-click="vm.onEdit()" type="button" class="btn btn-primary btn-lg pull-left mgLeft10 waves-effect waves-light">Edit Details</button>                        
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>        
+
